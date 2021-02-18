@@ -9,11 +9,19 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import EmployeeIndexPage from 'EmployeeIndexPage.vue'
+import EmployeeDetailPage from 'EmployeeDetailPage.vue'
+import EmployeeNewPage from 'EmployeeNewPage.vue'
 
 const router = new VueRouter({
   routes: [
     { path: '/',
-      component: EmployeeIndexPage }
+      component: EmployeeIndexPage },
+    { path: '/employees/:id(\\d+)', // :id restricts it to numbers only
+      name: 'EmployeeDetailPage',
+      component: EmployeeDetailPage },
+    { path: '/employees/new',
+      name: 'EmployeeNewPage',
+      component: EmployeeNewPage }
   ]
 })
 
@@ -24,5 +32,5 @@ export default {
 }
 </script>
 
-<style scoped> 
+<style scoped>
 </style>
